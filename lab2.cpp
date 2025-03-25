@@ -1,6 +1,6 @@
 
 #include <iostream>
-
+#include <vector>
 
 
 class kalkulator {
@@ -42,13 +42,13 @@ private:
 
 public:
 
-   
+
 
     int menu() {
         double a, b;
         int n;
         while (true) {
-            std::cout << std::endl << "1.dodawanie" << std::endl << "2.odejmowanie" << std::endl << "3.mnozenie" << std::endl << "4.dzielenie" << std::endl << "5.modulo" << std::endl << "6.wyczysc pamiec" << std::endl << "7.sprawdz pamiec" << std::endl<<"8.konwersja"<<std::endl<<"9.wyjdz";
+            std::cout << std::endl << "1.dodawanie" << std::endl << "2.odejmowanie" << std::endl << "3.mnozenie" << std::endl << "4.dzielenie" << std::endl << "5.modulo" << std::endl << "6.wyczysc pamiec" << std::endl << "7.sprawdz pamiec" << std::endl<<"8.konwersja"<<std::endl<<"9.wyjdz"<<std::endl;
 
             std::cin >> n;
 
@@ -104,7 +104,7 @@ public:
                 mem_zaj = true;
                 break;
             case 6:
-                
+
                 wycz();
                 break;
             case 7:
@@ -112,28 +112,57 @@ public:
                 get();
                 break;
             case 8:
-
+menu_kon();
 
 
                 break;
             case 9:
                 exit(0);
-              
+
             default:
                 std::cout << "nie ma takiej opcji";
             }
         }
-            return 1;
-        
+
+
     };
 
     int menu_kon() {
+int n;
+int m;
+        while (true) {
+            std::cout << "Powrot do menu wpisz 1"<<std::endl;
+            std::cout<<"Na jaki system chcesz przekonwertowac swoja liczbe"<<std::endl;
+            std::cin>>n;
+if (n==1) {
+    menu();
+}
+
+       if (n<2 or n>10) {
+           std::cout<<"baza musi byc w zakresie 2-10"<<std::endl;
+           menu_kon();
+       }
 
 
+            std::cout<<"Podaj swoja liczbe"<<std::endl;
+            std::cin>>m;
+
+std::vector<int> wynik;
+
+            while (m>0) {
+wynik.push_back(m%n);
+                m=m/n;
+
+            }
+
+std::cout<<"Wynik:";
+            for (int i=wynik.size()-1; i>=0; i--) {
+                std::cout<<wynik[i];
+            }
+std::cout<<std::endl;
 
 
-
-
+        }
     }
 
 
@@ -164,6 +193,12 @@ int main()
     kalkulator k;
         k.menu();
 
-        
-    
+
+
 }
+
+
+// TIP See CLion help at <a
+// href="https://www.jetbrains.com/help/clion/">jetbrains.com/help/clion/</a>.
+//  Also, you can try interactive lessons for CLion by selecting
+//  'Help | Learn IDE Features' from the main menu.
