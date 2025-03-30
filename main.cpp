@@ -1,4 +1,4 @@
-#include "../include/kalkulator.h"
+#include "kalkulator.h"
 #include <iostream>
 #include <vector>
 
