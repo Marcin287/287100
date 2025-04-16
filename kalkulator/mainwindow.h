@@ -22,14 +22,14 @@ public:
 
 QString akt_string;//to co jest na ekranie
     double temp; //pierwsza liczba w operacji
-int baza; //baza z ktorej robimy konwersje
+int baza=10; //baza z ktorej robimy konwersje
 std::string temp_kon; //temp do konwersji
 
-    bool dziel; //znacznik jaka operacja jest wykonywana
-    bool mnoz;
-    bool dod;
-    bool od;
-    bool mod;
+    bool dziel=false; //znacznik jaka operacja jest wykonywana
+    bool mnoz=false;
+    bool dod=false;
+    bool od=false;
+    bool mod=false;
     void setDarkTheme();
     void setLightTheme();
 

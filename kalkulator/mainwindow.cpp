@@ -5,7 +5,7 @@
 
 
 
-QString akt_string="0";//to co jest akutalnie na ekranie
+QString akt_string="";//to co jest akutalnie na ekranie
 int baza=10; //domyślna baza
 double temp=0; //pierwsza liczba w operacji
 std::string temp_kon;
@@ -494,12 +494,7 @@ void MainWindow::on_row_clicked()
         kalkulator.set(akt_string.toDouble());
         mod=false;
     }else if(kon==true){
-        //z jakiegos powodu mimo ustawienie baza=10 na poczatku konwerter tego nie widzi
-        //dlatego bez wyboru bazy nic nie wysiwetal
-        //teraz domyślną bazą jest 10
-        if(baza>10 or baza<2){
-            baza=10;
-        }
+
 
 
         if(kalkulator.get()>10 or kalkulator.get()<2 ){
